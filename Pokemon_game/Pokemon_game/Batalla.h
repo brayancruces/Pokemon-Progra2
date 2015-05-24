@@ -26,7 +26,7 @@ public:
 	Batalla();
 	~Batalla();
 	void Dibujar(Graphics^ Graphic);
-	void Batallar(char* TipoDeAtaque);
+	void BatallarConMi(char* TipoDeAtaque);
 };
 
 
@@ -57,7 +57,7 @@ void Batalla::Dibujar(Graphics^ Graphic){
 	if (!Final){
 
 		System::Drawing::Rectangle rctPokemon = System::Drawing::Rectangle(0, 0, 80, 80);
-		Graphic->DrawImage("template_BatallaPokemon.png", rctDestinoPokemon2, rctPokemon, System::Drawing::GraphicsUnit::Pixel);
+		//Graphic->DrawImage("template_BatallaPokemon.png", rctDestinoPokemon2, rctPokemon, System::Drawing::GraphicsUnit::Pixel);
 
 
 		//Dibujando al pokemon Retador
@@ -75,76 +75,65 @@ void Batalla::Dibujar(Graphics^ Graphic){
 		Graphic->FillRectangle(Brushes::LightGray, 10, 360, 580, 130);
 			
 
-		if (turnoataque == true){
+		if (TurnoEntrenador1){
 
-			infopokemon(gr, pokemon1, 50, 50);
-			infopokemon(gr, pokemon2, 300, 300);
+			DibujarStatsPokemon(Graphic, Pokemon1, 50, 50);
+			DibujarStatsPokemon(Graphic, Pokemon2, 300, 300);
 		}
 		else
 		{
-			timer++;
+			Timer++;
 		}
 
-		if (timer > 5){
-			timer = 0;
-			turnoataque = true;
+		if (Timer > 5){
+			Timer = 0;
+			TurnoEntrenador1 = true;
 		}
 
-		if (pokemon1->getvida() <= 0) fin = true;
-		if (pokemon2->getvida() <= 0) fin = true;
+		if (Pokemon1->getVida() <= 0) Final = true;
+		if (Pokemon2->getVida() <= 0) Final = true;
 
 	}
 	else
 	{
-		gr->FillRectangle(Brushes::Gray, 50, 350, 500, 400);
+		Graphic->FillRectangle(Brushes::Gray, 50, 350, 500, 400);
 
 	}
 
 }
-void Batalla::emularbatalla(ATTACK TURNO){
+void Batalla::BatallarConMi(char* TipoDeAtaque){
 
-	switch (TURNO)
-	{
-	case ATAQUE1:
+	if (TipoDeAtaque == "Primera")
+		Pokemon2->setVida(Pokemon2->getVida() - Pokemon1->getDanio1());
+		
+	if (TipoDeAtaque == "Segunda")
+		Pokemon2->setVida(Pokemon2->getVida() - Pokemon1->getDanio2());
 
-		pokemon2->setvida(pokemon2->getvida() - pokemon1->getdanio1());
-		break;
-	case ATAQUE2:
+	if (TipoDeAtaque == "Tercera")
+		Pokemon2->setVida(Pokemon2->getVida() - Pokemon1->getDanio3());
 
-		pokemon2->setvida(pokemon2->getvida() - pokemon1->getdanio2());
-		break;
-	case ATAQUE3:
-		pokemon2->setvida(pokemon2->getvida() - pokemon1->getdanio3());
-		break;
-	case ATAQUE4:
-		pokemon2->setvida(pokemon2->getvida() - pokemon1->getdanio4());
+	if (TipoDeAtaque == "Ultimate")
+		Pokemon2->setVida(Pokemon2->getVida() - Pokemon1->getDanio4());
+	
 
-		break;
-	default:
-		break;
-	}
+	int AtaqueRandom = rand() & 3;
 
-	int bot = rand() & 3;
-
-	switch (bot)
+	switch (AtaqueRandom)
 	{
 	case 0:
-		pokemon1->setvida(pokemon1->getvida() - pokemon2->getdanio1());
+		Pokemon1->setVida(Pokemon1->getVida() - Pokemon2->getDanio1());
 		break;
 	case 1:
-		pokemon1->setvida(pokemon1->getvida() - pokemon2->getdanio2());
+		Pokemon1->setVida(Pokemon1->getVida() - Pokemon2->getDanio2());
 		break;
 	case 2:
-		pokemon1->setvida(pokemon1->getvida() - pokemon2->getdanio3());
+		Pokemon1->setVida(Pokemon1->getVida() - Pokemon2->getDanio3());
 		break;
 	case 3:
-		pokemon1->setvida(pokemon1->getvida() - pokemon2->getdanio4());
-		break;
-	default:
-		pokemon1->setvida(pokemon1->getvida() - pokemon2->getdanio1());
+		Pokemon1->setVida(Pokemon1->getVida() - Pokemon2->getDanio4());
 		break;
 	}
 
-	turnoataque = false;
+	TurnoEntrenador1 = false;
 
 }

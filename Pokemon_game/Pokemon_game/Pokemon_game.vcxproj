@@ -78,9 +78,7 @@
     <ClInclude Include="Pokemon.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Batalla.cpp" />
     <ClCompile Include="MyForm.cpp" />
-    <ClCompile Include="Pokemon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
