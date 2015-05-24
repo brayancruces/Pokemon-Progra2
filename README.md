@@ -4,11 +4,11 @@ Game of PoKemon. Todos los derechos de gráficos e imágenes a sus respectivos d
 
 [v1.0]
 
- Introduction
+Introducción
 ------------------------------------------------------------------------
 
 
-Sobre la localizacion de sprites
+Sprites
 ------------------------------------------------------------------------
 
 
