@@ -103,19 +103,20 @@ void Batalla::Dibujar(Graphics^ Graphic){
 }
 void Batalla::BatallarConMi(char* TipoDeAtaque){
 
-	if (TipoDeAtaque == "Primera")
+	// Ataques de mi pokemon
+	if (strcmp(TipoDeAtaque,"Primera") == 0)
 		Pokemon2->setVida(Pokemon2->getVida() - Pokemon1->getDanio1());
 		
-	if (TipoDeAtaque == "Segunda")
+	else if (strcmp(TipoDeAtaque,"Segunda") == 0)
 		Pokemon2->setVida(Pokemon2->getVida() - Pokemon1->getDanio2());
 
-	if (TipoDeAtaque == "Tercera")
+	else if (strcmp(TipoDeAtaque,"Tercera") == 0)
 		Pokemon2->setVida(Pokemon2->getVida() - Pokemon1->getDanio3());
 
-	if (TipoDeAtaque == "Ultimate")
+	else if (strcmp(TipoDeAtaque,"Ultimate") == 0)
 		Pokemon2->setVida(Pokemon2->getVida() - Pokemon1->getDanio4());
 	
-
+	// Ataques del del Bot 
 	int AtaqueRandom = rand() & 3;
 
 	switch (AtaqueRandom)
