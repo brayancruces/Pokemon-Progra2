@@ -10,7 +10,7 @@ Introducción
 
 Sprites
 ------------------------------------------------------------------------
-
+Las imágenes sprite están localizadas segun sus usos en los escenaros
 
 
  Legal notice
