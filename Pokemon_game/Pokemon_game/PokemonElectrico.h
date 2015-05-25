@@ -3,10 +3,13 @@
 class PokemonElectrico : public Pokemon
 {
 public:
+	PokemonElectrico(void);
 	PokemonElectrico(int Cordx, int Cordy, int anchoSprite, int alturaSprite);
 	~PokemonElectrico();
 };
 
+
+PokemonElectrico::PokemonElectrico(void){}
 
 PokemonElectrico::PokemonElectrico(int Cordx, int Cordy, int anchoSprite, int alturaSprite) 
 	: Pokemon(Cordx, Cordy, anchoSprite, alturaSprite)
@@ -21,13 +24,16 @@ PokemonElectrico::~PokemonElectrico()
 }
 
 //Pokemones Tipo Electrico
-class Pikachu : PokemonElectrico
+class Pikachu : public PokemonElectrico
 {
 public:
+	Pikachu(void);
 	Pikachu(int Cordx, int Cordy, int anchoSprite, int alturaSprite);
 	~Pikachu();
 
 };
+
+Pikachu::Pikachu(void){}
 
 Pikachu::Pikachu(int Cordx, int Cordy, int anchoSprite, int alturaSprite)
 	: PokemonElectrico(Cordx, Cordy, anchoSprite, alturaSprite)

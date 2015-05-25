@@ -1,13 +1,15 @@
 #pragma once
 #include "Pokemon.h"
-class PokemonPlanta : protected Pokemon
+class PokemonPlanta : public Pokemon
 {
 public:
-
+	PokemonPlanta(void);
 	PokemonPlanta(int Cordx, int Cordy, int anchoSprite, int alturaSprite);
 	~PokemonPlanta();
 
 };
+
+PokemonPlanta::PokemonPlanta(void){}
 
 PokemonPlanta::PokemonPlanta(int Cordx, int Cordy, int anchoSprite, int alturaSprite)
 	: Pokemon(Cordx, Cordy, anchoSprite, alturaSprite)
@@ -21,13 +23,16 @@ PokemonPlanta::~PokemonPlanta()
 }
 
 //Pokemones Tipo Planta
-class Bulbasaur : PokemonPlanta
+class Bulbasaur : public PokemonPlanta
 {
 public:
+	Bulbasaur(void);
 	Bulbasaur(int Cordx, int Cordy, int anchoSprite, int alturaSprite);
 	~Bulbasaur();
 
 };
+
+Bulbasaur::Bulbasaur(void){}
 
 Bulbasaur::Bulbasaur(int Cordx, int Cordy, int anchoSprite, int alturaSprite)
 	: PokemonPlanta(Cordx, Cordy, anchoSprite, alturaSprite)
@@ -36,7 +41,7 @@ Bulbasaur::Bulbasaur(int Cordx, int Cordy, int anchoSprite, int alturaSprite)
 
 
 	setdirImagen("Resources\\img\\sprites\\pokemon\\battle\\bulbasaur_front.png");
-	setNombre("Bulbasaur");
+	setNombre("Bulbasaur"); 
 
 	setAtaque1("Latigo Sepa");
 	setAtaque1("Maliciosos");

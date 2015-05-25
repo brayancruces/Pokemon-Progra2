@@ -23,12 +23,12 @@ protected:
 public:
 	//METODOS
 		//Constructor
-		Pokemon();
+		Pokemon(void);
 		Pokemon(int Cordx, int Cordy, int anchoSprite, int alturaSprite);
 		//Destructor
 		~Pokemon();
 
-	//METODOS DE ACCESO
+	//METODOS DE ACCESOq
 		// GET
 		int getX();
 		int getY();
@@ -74,13 +74,14 @@ public:
 };
 
 //Constructor
-Pokemon::Pokemon(){}
+Pokemon::Pokemon(void){}
 Pokemon::Pokemon(int Cordx, int Cordy, int anchoSprite, int alturaSprite){
 	X = Cordx;
 	Y = Cordy;
 	Ancho = anchoSprite;
 	Altura = alturaSprite;
 
+	dirImagen = new char[100];
 	Nombre = new char[100];
 	Tipo = 0;
     Ataque1 = new char[100];

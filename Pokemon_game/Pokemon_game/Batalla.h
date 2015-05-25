@@ -2,8 +2,6 @@
 
 #include "ArregloPokemon.h"
 #include "Dibujos.h"
-#include "PokemonElectrico.h"
-#include "PokemonPlanta.h"
 
 using namespace System;
 using namespace System::Drawing;
@@ -13,8 +11,8 @@ class Batalla
 {
 	ArregloPokemon* Entrenador1;
 	ArregloPokemon* Entrenador2;
-	Bulbasaur* Pokemon1;
-	Pikachu* Pokemon2;
+	Pokemon* Pokemon1;
+	Pokemon* Pokemon2;
 
 	int Indice;
 	bool GanoEntrenador1;

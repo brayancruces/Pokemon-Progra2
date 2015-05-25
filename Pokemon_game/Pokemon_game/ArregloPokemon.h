@@ -1,5 +1,7 @@
 #pragma once
 #include"Pokemon.h"
+#include "PokemonElectrico.h"
+#include "PokemonPlanta.h"
 
 class ArregloPokemon{
 protected:
