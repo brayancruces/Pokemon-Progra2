@@ -1,11 +1,17 @@
 #ARCHIVOS A IGNORAR
 
+#Carpeta Debug
+Pokemon_game/Debug/*
+Pokemon_game/Pokemon_game/Debug/*
+
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
 
 # Folder config file
 Desktop.ini
+
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
