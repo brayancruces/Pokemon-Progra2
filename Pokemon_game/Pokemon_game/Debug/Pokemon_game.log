@@ -1,20 +1,131 @@
-﻿Compilación iniciada a las 24/05/2015 11:51:45 p.m..
+﻿Compilación iniciada a las 25/05/2015 01:59:12 a.m..
      1>Proyecto "C:\Users\Diego\Documents\GitHub\Pokemon-Progra2\Pokemon_game\Pokemon_game\Pokemon_game.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib MyForm.cpp
          MyForm.cpp
-     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(125): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(131): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : vea la declaración de 'strcpy'
-     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(126): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(134): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : vea la declaración de 'strcpy'
-     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Dibujos.h(12): warning C4244: 'argumento' : conversión de 'int' a 'float'; posible pérdida de datos
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(140): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : vea la declaración de 'strcpy'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(141): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : vea la declaración de 'strcpy'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(142): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : vea la declaración de 'strcpy'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(143): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : vea la declaración de 'strcpy'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Dibujos.h(12): error C2228: el operando izquierdo de '.ToString' debe tener class/struct/union
+                 el tipo es 'char *'
      1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Dibujos.h(13): warning C4244: 'argumento' : conversión de 'int' a 'float'; posible pérdida de datos
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Diego\Documents\GitHub\Pokemon-Progra2\Pokemon_game\Debug\Pokemon_game.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Diego\Documents\GitHub\Pokemon-Progra2\Pokemon_game\Debug\Pokemon_game.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\MyForm.obj
-         "Debug\.NETFramework,Version=v4.5.AssemblyAttributes.obj"
-         Pokemon_game.vcxproj -> C:\Users\Diego\Documents\GitHub\Pokemon-Progra2\Pokemon_game\Debug\Pokemon_game.exe
-     1>Compilación del proyecto terminada "C:\Users\Diego\Documents\GitHub\Pokemon-Progra2\Pokemon_game\Pokemon_game\Pokemon_game.vcxproj" (Build destinos).
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(85): error C2243: 'conversión de tipo' : la conversión de 'Bulbasaur *' a 'Pokemon *' existe, pero no es accesible
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(86): error C2243: 'conversión de tipo' : la conversión de 'Pikachu *' a 'Pokemon *' existe, pero no es accesible
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(98): error C2247: No se puede obtener acceso a 'Pokemon::getVida' porque 'PokemonPlanta' utiliza 'protected' para heredar de 'Pokemon'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(41) : vea la declaración de 'Pokemon::getVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonPlanta.h(3) : vea la declaración de 'PokemonPlanta'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(6) : vea la declaración de 'Pokemon'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(99): error C2247: No se puede obtener acceso a 'Pokemon::getVida' porque 'Pikachu' utiliza 'private' para heredar de 'PokemonElectrico'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(41) : vea la declaración de 'Pokemon::getVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(24) : vea la declaración de 'Pikachu'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(3) : vea la declaración de 'PokemonElectrico'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(113): error C2247: No se puede obtener acceso a 'Pokemon::getVida' porque 'Pikachu' utiliza 'private' para heredar de 'PokemonElectrico'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(41) : vea la declaración de 'Pokemon::getVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(24) : vea la declaración de 'Pikachu'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(3) : vea la declaración de 'PokemonElectrico'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(113): error C2247: No se puede obtener acceso a 'Pokemon::getDanio1' porque 'PokemonPlanta' utiliza 'protected' para heredar de 'Pokemon'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(48) : vea la declaración de 'Pokemon::getDanio1'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonPlanta.h(3) : vea la declaración de 'PokemonPlanta'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(6) : vea la declaración de 'Pokemon'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(113): error C2247: No se puede obtener acceso a 'Pokemon::setVida' porque 'Pikachu' utiliza 'private' para heredar de 'PokemonElectrico'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(62) : vea la declaración de 'Pokemon::setVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(24) : vea la declaración de 'Pikachu'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(3) : vea la declaración de 'PokemonElectrico'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(116): error C2247: No se puede obtener acceso a 'Pokemon::getVida' porque 'Pikachu' utiliza 'private' para heredar de 'PokemonElectrico'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(41) : vea la declaración de 'Pokemon::getVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(24) : vea la declaración de 'Pikachu'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(3) : vea la declaración de 'PokemonElectrico'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(116): error C2247: No se puede obtener acceso a 'Pokemon::getDanio2' porque 'PokemonPlanta' utiliza 'protected' para heredar de 'Pokemon'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(49) : vea la declaración de 'Pokemon::getDanio2'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonPlanta.h(3) : vea la declaración de 'PokemonPlanta'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(6) : vea la declaración de 'Pokemon'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(116): error C2247: No se puede obtener acceso a 'Pokemon::setVida' porque 'Pikachu' utiliza 'private' para heredar de 'PokemonElectrico'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(62) : vea la declaración de 'Pokemon::setVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(24) : vea la declaración de 'Pikachu'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(3) : vea la declaración de 'PokemonElectrico'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(119): error C2247: No se puede obtener acceso a 'Pokemon::getVida' porque 'Pikachu' utiliza 'private' para heredar de 'PokemonElectrico'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(41) : vea la declaración de 'Pokemon::getVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(24) : vea la declaración de 'Pikachu'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(3) : vea la declaración de 'PokemonElectrico'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(119): error C2247: No se puede obtener acceso a 'Pokemon::getDanio3' porque 'PokemonPlanta' utiliza 'protected' para heredar de 'Pokemon'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(50) : vea la declaración de 'Pokemon::getDanio3'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonPlanta.h(3) : vea la declaración de 'PokemonPlanta'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(6) : vea la declaración de 'Pokemon'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(119): error C2247: No se puede obtener acceso a 'Pokemon::setVida' porque 'Pikachu' utiliza 'private' para heredar de 'PokemonElectrico'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(62) : vea la declaración de 'Pokemon::setVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(24) : vea la declaración de 'Pikachu'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(3) : vea la declaración de 'PokemonElectrico'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(122): error C2247: No se puede obtener acceso a 'Pokemon::getVida' porque 'Pikachu' utiliza 'private' para heredar de 'PokemonElectrico'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(41) : vea la declaración de 'Pokemon::getVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(24) : vea la declaración de 'Pikachu'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(3) : vea la declaración de 'PokemonElectrico'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(122): error C2247: No se puede obtener acceso a 'Pokemon::getDanio4' porque 'PokemonPlanta' utiliza 'protected' para heredar de 'Pokemon'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(51) : vea la declaración de 'Pokemon::getDanio4'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonPlanta.h(3) : vea la declaración de 'PokemonPlanta'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(6) : vea la declaración de 'Pokemon'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(122): error C2247: No se puede obtener acceso a 'Pokemon::setVida' porque 'Pikachu' utiliza 'private' para heredar de 'PokemonElectrico'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(62) : vea la declaración de 'Pokemon::setVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(24) : vea la declaración de 'Pikachu'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(3) : vea la declaración de 'PokemonElectrico'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(130): error C2247: No se puede obtener acceso a 'Pokemon::getVida' porque 'PokemonPlanta' utiliza 'protected' para heredar de 'Pokemon'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(41) : vea la declaración de 'Pokemon::getVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonPlanta.h(3) : vea la declaración de 'PokemonPlanta'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(6) : vea la declaración de 'Pokemon'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(130): error C2247: No se puede obtener acceso a 'Pokemon::getDanio1' porque 'Pikachu' utiliza 'private' para heredar de 'PokemonElectrico'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(48) : vea la declaración de 'Pokemon::getDanio1'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(24) : vea la declaración de 'Pikachu'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(3) : vea la declaración de 'PokemonElectrico'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(130): error C2247: No se puede obtener acceso a 'Pokemon::setVida' porque 'PokemonPlanta' utiliza 'protected' para heredar de 'Pokemon'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(62) : vea la declaración de 'Pokemon::setVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonPlanta.h(3) : vea la declaración de 'PokemonPlanta'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(6) : vea la declaración de 'Pokemon'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(133): error C2247: No se puede obtener acceso a 'Pokemon::getVida' porque 'PokemonPlanta' utiliza 'protected' para heredar de 'Pokemon'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(41) : vea la declaración de 'Pokemon::getVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonPlanta.h(3) : vea la declaración de 'PokemonPlanta'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(6) : vea la declaración de 'Pokemon'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(133): error C2247: No se puede obtener acceso a 'Pokemon::getDanio2' porque 'Pikachu' utiliza 'private' para heredar de 'PokemonElectrico'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(49) : vea la declaración de 'Pokemon::getDanio2'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(24) : vea la declaración de 'Pikachu'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(3) : vea la declaración de 'PokemonElectrico'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(133): error C2247: No se puede obtener acceso a 'Pokemon::setVida' porque 'PokemonPlanta' utiliza 'protected' para heredar de 'Pokemon'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(62) : vea la declaración de 'Pokemon::setVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonPlanta.h(3) : vea la declaración de 'PokemonPlanta'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(6) : vea la declaración de 'Pokemon'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(136): error C2247: No se puede obtener acceso a 'Pokemon::getVida' porque 'PokemonPlanta' utiliza 'protected' para heredar de 'Pokemon'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(41) : vea la declaración de 'Pokemon::getVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonPlanta.h(3) : vea la declaración de 'PokemonPlanta'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(6) : vea la declaración de 'Pokemon'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(136): error C2247: No se puede obtener acceso a 'Pokemon::getDanio3' porque 'Pikachu' utiliza 'private' para heredar de 'PokemonElectrico'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(50) : vea la declaración de 'Pokemon::getDanio3'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(24) : vea la declaración de 'Pikachu'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(3) : vea la declaración de 'PokemonElectrico'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(136): error C2247: No se puede obtener acceso a 'Pokemon::setVida' porque 'PokemonPlanta' utiliza 'protected' para heredar de 'Pokemon'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(62) : vea la declaración de 'Pokemon::setVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonPlanta.h(3) : vea la declaración de 'PokemonPlanta'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(6) : vea la declaración de 'Pokemon'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(139): error C2247: No se puede obtener acceso a 'Pokemon::getVida' porque 'PokemonPlanta' utiliza 'protected' para heredar de 'Pokemon'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(41) : vea la declaración de 'Pokemon::getVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonPlanta.h(3) : vea la declaración de 'PokemonPlanta'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(6) : vea la declaración de 'Pokemon'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(139): error C2247: No se puede obtener acceso a 'Pokemon::getDanio4' porque 'Pikachu' utiliza 'private' para heredar de 'PokemonElectrico'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(51) : vea la declaración de 'Pokemon::getDanio4'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(24) : vea la declaración de 'Pikachu'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonElectrico.h(3) : vea la declaración de 'PokemonElectrico'
+     1>c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Batalla.h(139): error C2247: No se puede obtener acceso a 'Pokemon::setVida' porque 'PokemonPlanta' utiliza 'protected' para heredar de 'Pokemon'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(62) : vea la declaración de 'Pokemon::setVida'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\PokemonPlanta.h(3) : vea la declaración de 'PokemonPlanta'
+                 c:\users\diego\documents\github\pokemon-progra2\pokemon_game\pokemon_game\Pokemon.h(6) : vea la declaración de 'Pokemon'
+     1>Compilación del proyecto terminada "C:\Users\Diego\Documents\GitHub\Pokemon-Progra2\Pokemon_game\Pokemon_game\Pokemon_game.vcxproj" (Build destinos) -- ERROR.
 
-Compilación correcta.
+ERROR al compilar.
 
-Tiempo transcurrido 00:00:02.45
+Tiempo transcurrido 00:00:00.96

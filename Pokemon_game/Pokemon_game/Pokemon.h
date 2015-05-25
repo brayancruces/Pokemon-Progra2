@@ -4,7 +4,7 @@
 
 class Pokemon
 {
-private:
+protected:
 	//Atributos
 	int X, Y, Ancho, Altura;
 	char* Nombre;
@@ -18,6 +18,7 @@ private:
 	char* Ataque3;
 	char* Ataque4;
 	int Danio1, Danio2, Danio3, Danio4;
+	char* dirImagen;
 
 public:
 	//METODOS
@@ -31,6 +32,7 @@ public:
 		// GET
 		int getX();
 		int getY();
+		char* getdirImagen();
 		int getAncho();
 		int getAltura();
 		char* getNombre();
@@ -51,14 +53,19 @@ public:
 		//SET
 		void setX(int nuevo);
 		void setY(int nuevo);
+		void setdirImagen(char* nuevo);
 		void setAncho(int nuevo);
 		void setAltura(int nuevo);
 		void setNombre(char* nuevo);
-		void setTipo(char* nuevo);
+		void setTipo(int nuevo);
 		void setRetador(bool nuevo);
 		void setVida(int nuevo);
 		void setExperiencia(int nuevo);
 		void setNivel(int nuevo);
+		void setAtaque1(char* nuevo);
+		void setAtaque2(char* nuevo);
+		void setAtaque3(char* nuevo);
+		void setAtaque4(char* nuevo);
 		void setDanio1(int nuevo);
 		void setDanio2(int nuevo);
 		void setDanio3(int nuevo);
@@ -100,6 +107,7 @@ Pokemon::~Pokemon(){}
 // GET
 int Pokemon::getX(){ return X; }
 int Pokemon::getY(){ return Y; }
+char* Pokemon::getdirImagen(){ return dirImagen; }
 int Pokemon::getAncho(){ return Ancho; }
 int Pokemon::getAltura(){ return Altura; }
 char* Pokemon::getNombre(){ return Nombre; }
@@ -120,14 +128,19 @@ int Pokemon::getDanio4(){ return Danio4; }
 //SET
 void Pokemon::setX(int nuevo){ X = nuevo; }
 void Pokemon::setY(int nuevo){ Y = nuevo; }
+void Pokemon::setdirImagen(char* nuevo){ strcpy(dirImagen, nuevo); }
 void Pokemon::setAncho(int nuevo){ Ancho = nuevo; }
 void Pokemon::setAltura(int nuevo){ Altura = nuevo; }
 void Pokemon::setNombre(char* nuevo){ strcpy(Nombre, nuevo); }
-void Pokemon::setTipo(char* nuevo){ strcpy(Nombre, nuevo); }
+void Pokemon::setTipo(int nuevo){ Tipo = nuevo; }
 void Pokemon::setRetador(bool nuevo){ Retador = nuevo; }
 void Pokemon::setVida(int nuevo){ Vida = nuevo; }
 void Pokemon::setExperiencia(int nuevo){ Experiencia = nuevo; }
 void Pokemon::setNivel(int nuevo){ Experiencia = nuevo; }
+void Pokemon::setAtaque1(char* nuevo){ strcpy(Ataque1, nuevo); }
+void Pokemon::setAtaque2(char* nuevo){ strcpy(Ataque2, nuevo); }
+void Pokemon::setAtaque3(char* nuevo){ strcpy(Ataque3, nuevo); }
+void Pokemon::setAtaque4(char* nuevo){ strcpy(Ataque4, nuevo); }
 void Pokemon::setDanio1(int nuevo){ Danio1 = nuevo; }
 void Pokemon::setDanio2(int nuevo){ Danio2 = nuevo; }
 void Pokemon::setDanio3(int nuevo){ Danio3 = nuevo; }

@@ -76,6 +76,8 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Pokemon.h" />
+    <ClInclude Include="PokemonElectrico.h" />
+    <ClInclude Include="PokemonPlanta.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyForm.cpp" />
