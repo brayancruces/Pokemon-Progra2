@@ -1,150 +1,174 @@
 #pragma once
 #include <stdlib.h>
 #include <string.h>
+using namespace System;
+using namespace System::Drawing;
 
 class Pokemon
 {
 protected:
 	//Atributos
-	int X, Y, Ancho, Altura;
-	char* Nombre;
+	int XImagen;
+	int YImagen;
+	int Ancho;
+	int Alto;
 	int Tipo;
-	bool Retador; // verificamos condicion de pokemon salvaje
 	int Vida;
+	int Vitalidad;
 	int Experiencia;
 	int Nivel;
+	int Danio1;
+	int Danio2;
+	int Danio3;
+	int Danio4;
+	bool PokemonCapturado;
+	char* Nombre;
 	char* Ataque1;
 	char* Ataque2;
 	char* Ataque3;
 	char* Ataque4;
-	int Danio1, Danio2, Danio3, Danio4;
-	char* dirImagen;
+	char* DirImagenFront;
+	char* DirImagenBack;
 
 public:
-	//METODOS
-		//Constructor
-		Pokemon(void);
-		Pokemon(int Cordx, int Cordy, int anchoSprite, int alturaSprite);
-		//Destructor
-		~Pokemon();
+		 Pokemon(void);//Constructor
+		~Pokemon(void);//Destructor
 
-	//METODOS DE ACCESOq
+	//METODOS DE ACCESO
 		// GET
-		int getX();
-		int getY();
-		char* getdirImagen();
+		int getXImagen();
+		int getYImagen();
 		int getAncho();
-		int getAltura();
-		char* getNombre();
+		int getAlto();
 		int getTipo();
-		bool getRetador();
 		int getVida();
+		int getVitalidad();
 		int getExperiencia();
 		int getNivel();
-		char* getAtaque1();
-		char* getAtaque2();
-		char* getAtaque3();
-		char* getAtaque4();
 		int getDanio1();
 		int getDanio2();
 		int getDanio3();
 		int getDanio4();
-
+		bool getPokemonCapturado();
+		char* getNombre();
+		char* getAtaque1();
+		char* getAtaque2();
+		char* getAtaque3();
+		char* getAtaque4();
+		char* getDirImagen();
+		
 		//SET
-		void setX(int nuevo);
-		void setY(int nuevo);
-		void setdirImagen(char* nuevo);
-		void setAncho(int nuevo);
-		void setAltura(int nuevo);
-		void setNombre(char* nuevo);
-		void setTipo(int nuevo);
-		void setRetador(bool nuevo);
-		void setVida(int nuevo);
-		void setExperiencia(int nuevo);
-		void setNivel(int nuevo);
-		void setAtaque1(char* nuevo);
-		void setAtaque2(char* nuevo);
-		void setAtaque3(char* nuevo);
-		void setAtaque4(char* nuevo);
-		void setDanio1(int nuevo);
-		void setDanio2(int nuevo);
-		void setDanio3(int nuevo);
-		void setDanio4(int nuevo);
+		void setXImagen(int NuevoXImagen);
+		void setYImagen(int NuevaYImagen);
+		void setAncho(int NuevoAncho);
+		void setAlto(int NuevoAlto);
+		void setTipo(int NuevoTipo);
+		void setVida(int NuevaVida);
+		void setVitalidad(int NuevaVitalidad);
+		void setExperiencia(int NuevaExperiencia);
+		void setNivel(int NuevoNivel);
+		void setDanio1(int NuevoDanio1);
+		void setDanio2(int NuevoDanio2);
+		void setDanio3(int NuevoDanio3);
+		void setDanio4(int NuevoDanio4);
+		void setPokemonCapturado(bool NuevoPokemonCapturado);
+		void setNombre(char* NuevoNombre);
+		void setDirImagenFront(char* NuevaDirImagenFront);
+		void setDirImagenBack(char* NuevaDirImagenFront);
+		void setAtaque1(char* NuevoAtaque1);
+		void setAtaque2(char* NuevoAtaque2);
+		void setAtaque3(char* NuevoAtaque3);
+		void setAtaque4(char* NuevoAtaque4);
 
+		//OTROS METODOS
+		void DibujarPokemon(Graphics^ Graphic, int EsquinaX, int EsquinaY, int NuevoAncho, int NuevoAlto);
 };
 
 //Constructor
-Pokemon::Pokemon(void){}
-Pokemon::Pokemon(int Cordx, int Cordy, int anchoSprite, int alturaSprite){
-	X = Cordx;
-	Y = Cordy;
-	Ancho = anchoSprite;
-	Altura = alturaSprite;
-
-	dirImagen = new char[100];
-	Nombre = new char[100];
-	Tipo = 0;
-    Ataque1 = new char[100];
-	Ataque2 = new char[100];
-	Ataque3 = new char[100];
-	Ataque4 = new char[100];
-
-	Vida = 30 + rand() % 30;
-	Experiencia = rand() % 800;
-	Nivel = 1 + Experiencia / 200;
-	Retador = true;
-	Danio1 = Nivel + rand() % 4;
-	Danio2 = Nivel + rand() % 4;
-	Danio3 = Nivel * 2 + rand() % 4;
-	Danio4 = Nivel * 2 + rand() % 4;
-
+Pokemon::Pokemon(void)
+{
+	Experiencia = 0;
+	Nivel = 1;
+	Nombre = new char[15];
+	Ataque1 = new char[20];
+	Ataque2 = new char[20];
+	Ataque3 = new char[20];
+	Ataque4 = new char[20];
+	DirImagenFront = new char[100];
+	DirImagenBack = new char[100];
 }
 
 //Destructor
-Pokemon::~Pokemon(){}
-//METODOS DE ACCESO
+Pokemon::~Pokemon()
+{
+	delete[] Nombre;
+	delete[] Ataque1;
+	delete[] Ataque2;
+	delete[] Ataque3;
+	delete[] Ataque4;
+	delete[] DirImagenFront;
+	delete[] DirImagenBack;
+}
 
 
-// GET
-int Pokemon::getX(){ return X; }
-int Pokemon::getY(){ return Y; }
-char* Pokemon::getdirImagen(){ return dirImagen; }
-int Pokemon::getAncho(){ return Ancho; }
-int Pokemon::getAltura(){ return Altura; }
-char* Pokemon::getNombre(){ return Nombre; }
+// Metodos GET
+int Pokemon::getXImagen(){ return XImagen; }
+int Pokemon::getYImagen(){ return YImagen; }
 int Pokemon::getTipo(){ return Tipo; }
-bool Pokemon::getRetador(){ return Retador; }
 int Pokemon::getVida(){ return Vida; }
 int Pokemon::getExperiencia(){ return Experiencia; }
 int Pokemon::getNivel(){ return Nivel; }
-char* Pokemon::getAtaque1(){ return Ataque1; }
-char* Pokemon::getAtaque2(){ return Ataque2; }
-char* Pokemon::getAtaque3(){ return Ataque3; }
-char* Pokemon::getAtaque4(){ return Ataque4; }
+int Pokemon::getAncho(){ return Ancho; }
+int Pokemon::getAlto(){ return Alto; }
 int Pokemon::getDanio1(){ return Danio1; }
 int Pokemon::getDanio2(){ return Danio2; }
 int Pokemon::getDanio3(){ return Danio3; }
 int Pokemon::getDanio4(){ return Danio4; }
+char* Pokemon::getNombre(){ return Nombre; }
+char* Pokemon::getAtaque1(){ return Ataque1; }
+char* Pokemon::getAtaque2(){ return Ataque2; }
+char* Pokemon::getAtaque3(){ return Ataque3; }
+char* Pokemon::getAtaque4(){ return Ataque4; }
+char* Pokemon::getDirImagen()
+{
+	if (PokemonCapturado)
+		return DirImagenBack;
+	else
+		return DirImagenFront;
+}
 
-//SET
-void Pokemon::setX(int nuevo){ X = nuevo; }
-void Pokemon::setY(int nuevo){ Y = nuevo; }
-void Pokemon::setdirImagen(char* nuevo){ strcpy(dirImagen, nuevo); }
-void Pokemon::setAncho(int nuevo){ Ancho = nuevo; }
-void Pokemon::setAltura(int nuevo){ Altura = nuevo; }
-void Pokemon::setNombre(char* nuevo){ strcpy(Nombre, nuevo); }
-void Pokemon::setTipo(int nuevo){ Tipo = nuevo; }
-void Pokemon::setRetador(bool nuevo){ Retador = nuevo; }
-void Pokemon::setVida(int nuevo){ Vida = nuevo; }
-void Pokemon::setExperiencia(int nuevo){ Experiencia = nuevo; }
-void Pokemon::setNivel(int nuevo){ Experiencia = nuevo; }
-void Pokemon::setAtaque1(char* nuevo){ strcpy(Ataque1, nuevo); }
-void Pokemon::setAtaque2(char* nuevo){ strcpy(Ataque2, nuevo); }
-void Pokemon::setAtaque3(char* nuevo){ strcpy(Ataque3, nuevo); }
-void Pokemon::setAtaque4(char* nuevo){ strcpy(Ataque4, nuevo); }
-void Pokemon::setDanio1(int nuevo){ Danio1 = nuevo; }
-void Pokemon::setDanio2(int nuevo){ Danio2 = nuevo; }
-void Pokemon::setDanio3(int nuevo){ Danio3 = nuevo; }
-void Pokemon::setDanio4(int nuevo){ Danio4 = nuevo; }
+//Metodos SET
+void Pokemon::setXImagen(int NuevoXImagen){ XImagen = NuevoXImagen; }
+void Pokemon::setYImagen(int NuevaYImagen){ YImagen = NuevaYImagen; }
+void Pokemon::setDanio1(int NuevoDanio1){ Danio1 = NuevoDanio1; }
+void Pokemon::setDanio2(int NuevoDanio2){ Danio2 = NuevoDanio2; }
+void Pokemon::setDanio3(int NuevoDanio3){ Danio3 = NuevoDanio3; }
+void Pokemon::setDanio4(int NuevoDanio4){ Danio4 = NuevoDanio4; }
+void Pokemon::setAncho(int NuevoAncho){ Ancho = NuevoAncho; }
+void Pokemon::setAlto(int NuevoAlto){ Alto = NuevoAlto; }
+void Pokemon::setTipo(int NuevoTipo){ Tipo = NuevoTipo; }
+void Pokemon::setVida(int NuevaVida){ Vida = NuevaVida; }
+void Pokemon::setExperiencia(int NuevaExperiencia){ Experiencia = NuevaExperiencia; }
+void Pokemon::setNivel(int NuevoNivel){ Nivel = NuevoNivel; }
+void Pokemon::setPokemonCapturado(bool NuevoPokemonCapturado){ PokemonCapturado = NuevoPokemonCapturado; }
+void Pokemon::setNombre(char* NuevoNombre){ strcpy(Nombre, NuevoNombre); }
+void Pokemon::setAtaque1(char* NuevoAtaque1){ strcpy(Ataque1, NuevoAtaque1); }
+void Pokemon::setAtaque2(char* NuevoAtaque2){ strcpy(Ataque2, NuevoAtaque2); }
+void Pokemon::setAtaque3(char* NuevoAtaque3){ strcpy(Ataque3, NuevoAtaque3); }
+void Pokemon::setAtaque4(char* NuevoAtaque4){ strcpy(Ataque4, NuevoAtaque4); }
+void Pokemon::setDirImagenFront(char* NuevaDirImagenFront){ strcpy(DirImagenFront, NuevaDirImagenFront); }
+void Pokemon::setDirImagenBack(char* NuevaDirImagenBack){ strcpy(DirImagenBack, NuevaDirImagenBack); }
+
+void Pokemon::DibujarPokemon(Graphics^ Graphic,int EsquinaX, int EsquinaY, int NuevoAncho, int NuevoAlto)
+{
+	//Dibujando al pokemon Retador
+	Graphic->DrawImage(
+		gcnew Bitmap(gcnew String(getDirImagen())),//--------->Imagen del Pokemon
+		Rectangle(EsquinaX, EsquinaY, NuevoAncho, NuevoAlto),//Destino y Tamaño de la Imagen
+		Rectangle(0, 0, Ancho, Alto),//----------------------->Porcion de la Imagen
+		GraphicsUnit::Pixel//--------------------------------->Unidad de Medicion
+		);
+}
+
 
 

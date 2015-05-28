@@ -10,25 +10,23 @@ protected:
 
 public:
 
-	ArregloPokemon();
-	~ArregloPokemon();
+	 ArregloPokemon(void);
+	~ArregloPokemon(void);
 
 	void AgregarPokemon(Pokemon* NuevoPokemon);
 };
 
-ArregloPokemon::ArregloPokemon()
+ArregloPokemon::ArregloPokemon(void)
 {
 	ArregloDePokemones = NULL;
 	*N = 0;
 }
-ArregloPokemon::~ArregloPokemon()
+
+ArregloPokemon::~ArregloPokemon(void)
 {
 	for (int i = 0; i < *N; i++)
 		delete ArregloDePokemones[i];
 	delete ArregloDePokemones;
 }
 
-void ArregloPokemon::AgregarPokemon(Pokemon* NuevoPokemon)
-{
-
-}
+void ArregloPokemon::AgregarPokemon(Pokemon* NuevoPokemon){ }

@@ -1,59 +1,47 @@
 #pragma once
 #include "Pokemon.h"
+
 class PokemonPlanta : public Pokemon
 {
 public:
-	PokemonPlanta(void);
-	PokemonPlanta(int Cordx, int Cordy, int anchoSprite, int alturaSprite);
-	~PokemonPlanta();
-
+	 PokemonPlanta(void);
+	~PokemonPlanta(void);
 };
 
-PokemonPlanta::PokemonPlanta(void){}
-
-PokemonPlanta::PokemonPlanta(int Cordx, int Cordy, int anchoSprite, int alturaSprite)
-	: Pokemon(Cordx, Cordy, anchoSprite, alturaSprite)
+PokemonPlanta::PokemonPlanta(void) : Pokemon()
 {
-
+	Tipo == 2;
 }
 
-PokemonPlanta::~PokemonPlanta()
-{
-
-}
+PokemonPlanta::~PokemonPlanta(void){}
 
 //Pokemones Tipo Planta
 class Bulbasaur : public PokemonPlanta
 {
 public:
-	Bulbasaur(void);
-	Bulbasaur(int Cordx, int Cordy, int anchoSprite, int alturaSprite);
-	~Bulbasaur();
-
+	 Bulbasaur(void);
+	~Bulbasaur(void);
 };
 
-Bulbasaur::Bulbasaur(void){}
-
-Bulbasaur::Bulbasaur(int Cordx, int Cordy, int anchoSprite, int alturaSprite)
-	: PokemonPlanta(Cordx, Cordy, anchoSprite, alturaSprite)
+Bulbasaur::Bulbasaur(void) : PokemonPlanta()
 {
+	setVida(80);
+	setAncho(80);
+	setAlto(80);
+	setPokemonCapturado(false);
 	
-
-
-	setdirImagen("Resources\\img\\sprites\\pokemon\\battle\\bulbasaur_front.png");
+	setDirImagenFront("Resources\\img\\sprites\\pokemon\\battle\\bulbasaur_front.png");
+	setDirImagenBack("Resources\\img\\sprites\\pokemon\\battle\\bulbasaur_back.png");
 	setNombre("Bulbasaur"); 
 
 	setAtaque1("Latigo Sepa");
-	setAtaque1("Maliciosos");
-	setAtaque1("Somnifero");
-	setAtaque1("BitchSlap!");
+	setAtaque2("Maliciosos");
+	setAtaque3("Somnifero");
+	setAtaque4("BitchSlap!");
 
-	setDanio1(20);
-	setDanio1(0);
 	setDanio1(10);
-	setDanio1(50);
+	setDanio2(15);
+	setDanio3(20);
+	setDanio4(30);
 }
-Bulbasaur::~Bulbasaur()
-{
-
-}
+Bulbasaur::~Bulbasaur(void){}

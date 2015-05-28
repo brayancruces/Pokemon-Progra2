@@ -94,11 +94,11 @@ namespace Pokemon_game {
 
 	}
 	private: System::Void MyForm_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
-
-		if (e->KeyCode == Keys::A) miBatalla->BatallarConMi("Primera");
-		if (e->KeyCode == Keys::S) miBatalla->BatallarConMi("Segunda");
-		if (e->KeyCode == Keys::Z) miBatalla->BatallarConMi("Tercera");
-		if (e->KeyCode == Keys::X) miBatalla->BatallarConMi("Ultimate");
+		
+			 if (e->KeyCode == Keys::A) miBatalla->BatallarConMi("Primera");
+		else if (e->KeyCode == Keys::S) miBatalla->BatallarConMi("Segunda");
+		else if (e->KeyCode == Keys::Z) miBatalla->BatallarConMi("Tercera");
+		else if (e->KeyCode == Keys::X) miBatalla->BatallarConMi("Especial");
 
 	}
 	};

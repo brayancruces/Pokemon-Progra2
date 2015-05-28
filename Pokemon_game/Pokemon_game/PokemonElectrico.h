@@ -1,61 +1,50 @@
 #pragma once
 #include "Pokemon.h"
+
 class PokemonElectrico : public Pokemon
 {
 public:
-	PokemonElectrico(void);
-	PokemonElectrico(int Cordx, int Cordy, int anchoSprite, int alturaSprite);
-	~PokemonElectrico();
+	 PokemonElectrico(void);
+	~PokemonElectrico(void);
 };
 
-
-PokemonElectrico::PokemonElectrico(void){}
-
-PokemonElectrico::PokemonElectrico(int Cordx, int Cordy, int anchoSprite, int alturaSprite) 
-	: Pokemon(Cordx, Cordy, anchoSprite, alturaSprite)
+PokemonElectrico::PokemonElectrico() : Pokemon()
 {
-	
+	Tipo = 1;
 }
 
-
-PokemonElectrico::~PokemonElectrico()
-{
-
-}
+PokemonElectrico::~PokemonElectrico(void){}
 
 //Pokemones Tipo Electrico
 class Pikachu : public PokemonElectrico
 {
 public:
-	Pikachu(void);
-	Pikachu(int Cordx, int Cordy, int anchoSprite, int alturaSprite);
-	~Pikachu();
-
+	 Pikachu(void);
+	~Pikachu(void);
 };
 
-Pikachu::Pikachu(void){}
-
-Pikachu::Pikachu(int Cordx, int Cordy, int anchoSprite, int alturaSprite)
-	: PokemonElectrico(Cordx, Cordy, anchoSprite, alturaSprite)
+Pikachu::Pikachu(void): PokemonElectrico()
 {
+	setVida(60);
+	setAncho(80);
+	setAlto(80);
+	setPokemonCapturado(true);
 
-
-	setdirImagen("Resources\\img\\sprites\\pokemon\\battle\\pikachu_back.png");
+	setDirImagenFront("Resources\\img\\sprites\\pokemon\\battle\\pikachu_back.png");
+	setDirImagenBack("Resources\\img\\sprites\\pokemon\\battle\\pikachu_back.png");
 	setNombre("Pikachu");
 
 	setAtaque1("Impactrueno");
-	setAtaque1("QueRikachu");
-	setAtaque1("Dedo");
-	setAtaque1("AtaqueRapido");
+	setAtaque2("QueRikachu");
+	setAtaque3("Dedo");
+	setAtaque4("AtaqueRapido");
 
-	setDanio1(40);
-	setDanio1(0);
-	setDanio1(100);
-	setDanio1(5);
+	setDanio1(10);
+	setDanio2(15);
+	setDanio3(20);
+	setDanio4(30);
 
 	
 }
-Pikachu::~Pikachu()
-{
 
-}
+Pikachu::~Pikachu(void){}
