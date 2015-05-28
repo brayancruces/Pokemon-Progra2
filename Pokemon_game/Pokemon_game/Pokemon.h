@@ -124,6 +124,7 @@ int Pokemon::getDanio1(){ return Danio1; }
 int Pokemon::getDanio2(){ return Danio2; }
 int Pokemon::getDanio3(){ return Danio3; }
 int Pokemon::getDanio4(){ return Danio4; }
+bool Pokemon::getPokemonCapturado(){ return PokemonCapturado; }
 char* Pokemon::getNombre(){ return Nombre; }
 char* Pokemon::getAtaque1(){ return Ataque1; }
 char* Pokemon::getAtaque2(){ return Ataque2; }

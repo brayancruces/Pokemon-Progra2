@@ -1,5 +1,6 @@
 #pragma once
 #include "Batalla.h"
+#include <time.h>
 
 namespace Pokemon_game {
 
@@ -23,6 +24,11 @@ namespace Pokemon_game {
 			//TODO: Add the constructor code here
 			//
 			miBatalla = new Batalla();
+			miTiempo = time(NULL);
+
+			miGraphic = this->CreateGraphics();
+			EspacioParaBuffer = BufferedGraphicsManager::Current;
+			miBuffer = EspacioParaBuffer->Allocate(miGraphic, this->ClientRectangle);
 		}
 
 	protected:
@@ -35,9 +41,12 @@ namespace Pokemon_game {
 			if (components)
 			{
 				delete components;
-
 			}
 			delete miBatalla;
+			delete miGraphic;
+			delete EspacioParaBuffer;
+			delete miBuffer;
+
 		}
 	private: System::Windows::Forms::Timer^  timer1;
 	protected:
@@ -48,6 +57,11 @@ namespace Pokemon_game {
 		/// Required designer variable.
 		/// </summary>
 		Batalla* miBatalla;
+		time_t miTiempo;
+
+		Graphics^ miGraphic;
+		BufferedGraphicsContext^ EspacioParaBuffer;
+		BufferedGraphics^ miBuffer;
 
 
 #pragma region Windows Form Designer generated code
@@ -72,33 +86,35 @@ namespace Pokemon_game {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(600, 500);
 			this->Name = L"MyForm";
-			this->Text = L"MyForm";
+			this->Text = L"Pokemon UPC";
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MyForm::MyForm_KeyDown);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 	private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
+	
+		time_t TiempoEnFuncion;
+		TiempoEnFuncion = time(NULL);
 
-
-		System::Drawing::Graphics^ miGraphic = this->CreateGraphics();
-		System::Drawing::BufferedGraphicsContext^ miBufferBase = BufferedGraphicsManager::Current;
-		System::Drawing::BufferedGraphics^ miBuffer = miBufferBase->Allocate(miGraphic, this->ClientRectangle);
-
-		miBatalla->Dibujar(miBuffer->Graphics);
-
-		miBuffer->Render(miGraphic);
-		delete miBuffer;
-		delete miBufferBase;
-		delete miGraphic;
+		if (miBatalla->getContadorDeTurnos() == -1)
+		{
+			miBatalla->DibujarEscenario(miBuffer->Graphics);
+			miBuffer->Render(miGraphic);
+		}
+		else if (miBatalla->getContadorDeTurnos() >= 1)
+		{
+			miBatalla->ActualizarEscenario(miBuffer->Graphics);
+			miBuffer->Render(miGraphic);
+		}
 
 	}
 	private: System::Void MyForm_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
 		
-			 if (e->KeyCode == Keys::A) miBatalla->BatallarConMi("Primera");
-		else if (e->KeyCode == Keys::S) miBatalla->BatallarConMi("Segunda");
-		else if (e->KeyCode == Keys::Z) miBatalla->BatallarConMi("Tercera");
-		else if (e->KeyCode == Keys::X) miBatalla->BatallarConMi("Especial");
+			 if (e->KeyCode == Keys::A) miBatalla->BatallarConMi(miGraphic,"Primera");
+		else if (e->KeyCode == Keys::S) miBatalla->BatallarConMi(miGraphic,"Segunda");
+		else if (e->KeyCode == Keys::Z) miBatalla->BatallarConMi(miGraphic,"Tercera");
+		else if (e->KeyCode == Keys::X) miBatalla->BatallarConMi(miGraphic,"Especial");
 
 	}
 	};

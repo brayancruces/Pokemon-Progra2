@@ -42,9 +42,7 @@ Pikachu::Pikachu(void): PokemonElectrico()
 	setDanio1(10);
 	setDanio2(15);
 	setDanio3(20);
-	setDanio4(30);
-
-	
+	setDanio4(30);	
 }
 
 Pikachu::~Pikachu(void){}
