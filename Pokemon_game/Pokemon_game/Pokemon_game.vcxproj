@@ -56,6 +56,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies />
+      <SubSystem>NotSet</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -72,6 +73,10 @@
     <ClInclude Include="ArregloPokemon.h" />
     <ClInclude Include="Batalla.h" />
     <ClInclude Include="Dibujos.h" />
+    <ClInclude Include="Entrenador.h" />
+    <ClInclude Include="Juego.h" />
+    <ClInclude Include="Lider.h" />
+    <ClInclude Include="Marco.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

@@ -1,20 +1,24 @@
 #pragma once
-#include "ArregloPokemon.h"
+#include "Marco.h"
+#include "Lider.h"
 #include "Dibujos.h"
+//#include "Juego.h";
 
 class Batalla
 {
 private:
 	Pokemon* PokemonRetador;
 	Pokemon* PokemonMio;
-
-	int Timer;
+	bool Gane;
 	int ContadorDeTurnos;
 	
 public:
 	 Batalla(void);
+	 Batalla(Entrenador* NuestroMarco, Entrenador* LiderDeGimnasio);
 	~Batalla(void);
 	int getContadorDeTurnos();
+	Pokemon* getPokemonRetador();
+	Pokemon* getPokemonMio();
 	void setContadorDeTurnos(int NuevoContadorDeTurnos);
 	void DibujarEscenario(Graphics^ Graphic);
 	void ActualizarEscenario(Graphics^ Graphic);
@@ -24,12 +28,13 @@ public:
 };
 
 //Constructor
-Batalla::Batalla(void)
+Batalla::Batalla(void){}
+Batalla::Batalla(Entrenador* NuestroMarco, Entrenador* LiderDeGimnasio)
 {
-	Timer = 0;
 	ContadorDeTurnos = -1;
-	PokemonRetador = new Bulbasaur();
-	PokemonMio = new Pikachu();
+	PokemonMio = NuestroMarco->getArregloPokemon()->RetornaPokemon(0);
+	PokemonRetador = LiderDeGimnasio->getArregloPokemon()->RetornaPokemon(0);
+	
 }
 
 // Destructor
@@ -41,7 +46,8 @@ Batalla::~Batalla(void)
 
 int Batalla::getContadorDeTurnos(){ return ContadorDeTurnos; }
 void Batalla::setContadorDeTurnos(int NuevoContadorDeTurnos){ ContadorDeTurnos = NuevoContadorDeTurnos; }
-
+Pokemon* Batalla::getPokemonRetador(){ return PokemonRetador; }
+Pokemon* Batalla::getPokemonMio(){ return PokemonMio; }
 void Batalla::DibujarEscenario(Graphics^ Graphic)
 {
 	Graphic->DrawImage(
@@ -64,7 +70,7 @@ void Batalla::DibujarEscenario(Graphics^ Graphic)
 void Batalla::ActualizarEscenario(Graphics^ Graphic)
 {
 	DibujarCuadroPokemon(Graphic, PokemonRetador, 50, 50);
-	DibujarCuadroPokemon(Graphic, PokemonMio, 320, 255);
+	DibujarCuadroPokemon(Graphic, PokemonMio, 310, 240);
 }
 	
 
@@ -82,10 +88,15 @@ void Batalla::BatallarConMi(Graphics^ Graphic, char* TipoDeAtaque){
 	else if (strcmp(TipoDeAtaque,"Especial") == 0)
 		PokemonRetador->setVida(PokemonRetador->getVida() - PokemonMio->getDanio4());
 	
-	ContadorDeTurnos++;
+	ContadorDeTurnos = 1;
+	if (ContadorDeTurnos == 2)
+		ContadorDeTurnos = 0;
 	
 	if (PokemonMio->getVida() <= 0 || PokemonRetador->getVida() <= 0)
-		Fin(Graphic);
+	{
+		ContadorDeTurnos = 5;
+	}  
+
 	else
 		ElRivalBatalla(Graphic);
 }
@@ -110,20 +121,26 @@ void Batalla::ElRivalBatalla(Graphics^ Graphic)
 		PokemonMio->setVida(PokemonMio->getVida() - PokemonRetador->getDanio4());
 		break;
 	}
-	
-	ContadorDeTurnos ++;
+
+	ContadorDeTurnos = 2;
+	if (ContadorDeTurnos == 0)
+		ContadorDeTurnos = 0;
 
 	if (PokemonMio->getVida() <= 0 || PokemonRetador->getVida() <= 0)
-		Fin(Graphic);
+	{
+		ContadorDeTurnos = 5;
+	}
+		
 }
 
 void Batalla::Fin(Graphics^ Graphic)
 {
+	ContadorDeTurnos = 0;
 	Graphic->FillRectangle(Brushes::White, 50, 120, 490, 200);
 	Font^Fuente = gcnew Font("Lucida Console", 18);
 	Fuente = gcnew System::Drawing::Font(Fuente, FontStyle::Bold);
 	
-	if (PokemonRetador->getVida() <= 0){Graphic->DrawString("YOU WIN", Fuente, Brushes::Black, 240, 120);}
+	if (Gane){Graphic->DrawString("YOU WIN", Fuente, Brushes::Black, 240, 120);}
 	
 	else{Graphic->DrawString("YOU LOSE", Fuente, Brushes::Black, 240, 120);}
 }

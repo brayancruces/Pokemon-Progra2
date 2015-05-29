@@ -29,7 +29,6 @@ Pikachu::Pikachu(void): PokemonElectrico()
 	setAncho(80);
 	setAlto(80);
 	setPokemonCapturado(true);
-
 	setDirImagenFront("Resources\\img\\sprites\\pokemon\\battle\\pikachu_back.png");
 	setDirImagenBack("Resources\\img\\sprites\\pokemon\\battle\\pikachu_back.png");
 	setNombre("Pikachu");

@@ -1,6 +1,8 @@
 #pragma once
 #include "Batalla.h"
+#include "Juego.h"
 #include <time.h>
+
 
 namespace Pokemon_game {
 
@@ -23,9 +25,11 @@ namespace Pokemon_game {
 			//
 			//TODO: Add the constructor code here
 			//
-			miBatalla = new Batalla();
+			PokemonUPC = new Juego();
+			Nagayoshi = new PrimerLider();
+			Yo = new Marco();
+			miBatalla = new Batalla(Yo, Nagayoshi);
 			miTiempo = time(NULL);
-
 			miGraphic = this->CreateGraphics();
 			EspacioParaBuffer = BufferedGraphicsManager::Current;
 			miBuffer = EspacioParaBuffer->Allocate(miGraphic, this->ClientRectangle);
@@ -42,6 +46,7 @@ namespace Pokemon_game {
 			{
 				delete components;
 			}
+			delete PokemonUPC;
 			delete miBatalla;
 			delete miGraphic;
 			delete EspacioParaBuffer;
@@ -56,9 +61,11 @@ namespace Pokemon_game {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
+		Juego* PokemonUPC;
 		Batalla* miBatalla;
 		time_t miTiempo;
-
+		Entrenador* Yo;
+		Entrenador* Nagayoshi;
 		Graphics^ miGraphic;
 		BufferedGraphicsContext^ EspacioParaBuffer;
 		BufferedGraphics^ miBuffer;
@@ -92,21 +99,34 @@ namespace Pokemon_game {
 
 		}
 #pragma endregion
+
 	private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
 	
 		time_t TiempoEnFuncion;
 		TiempoEnFuncion = time(NULL);
 
-		if (miBatalla->getContadorDeTurnos() == -1)
-		{
-			miBatalla->DibujarEscenario(miBuffer->Graphics);
-			miBuffer->Render(miGraphic);
+		//if (Controlador->MenuDeInicio){}
+		//else if (Controlador->Introduccion){}
+		//else if(Controlador->SeleccionDePokemon){}
+		
+		if (PokemonUPC->getEscena() == 0){
+			if (miBatalla->getContadorDeTurnos() == -1)
+			{
+				miBatalla->DibujarEscenario(miBuffer->Graphics);
+				miBuffer->Render(miGraphic);
+			}
+			else if (miBatalla->getContadorDeTurnos() == 1 || miBatalla->getContadorDeTurnos() == 2)
+			{
+				miBatalla->ActualizarEscenario(miBuffer->Graphics);
+				miBuffer->Render(miGraphic);
+			}
+			else if (miBatalla->getContadorDeTurnos() == 5)
+				PokemonUPC->setEscena(1);
+
 		}
-		else if (miBatalla->getContadorDeTurnos() >= 1)
-		{
-			miBatalla->ActualizarEscenario(miBuffer->Graphics);
-			miBuffer->Render(miGraphic);
-		}
+		else if (PokemonUPC->getEscena() == 1)
+			PokemonUPC->FinBatalla1(miGraphic,miBatalla);
+
 
 	}
 	private: System::Void MyForm_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
@@ -117,6 +137,7 @@ namespace Pokemon_game {
 		else if (e->KeyCode == Keys::X) miBatalla->BatallarConMi(miGraphic,"Especial");
 
 	}
-	};
+	
+};
 }
 
